@@ -1,11 +1,13 @@
-import React from 'react'; 
+import React, { useEffect } from "react";
 
-interface HomeProps{
-
-}
+interface HomeProps {}
 
 export default function Home(props: HomeProps) {
-    return (
-        <div>wat</div>
-    )
+
+  const urlToken = new URLSearchParams(window.location.href)
+  useEffect(() => {
+    console.log(urlToken);
+  }, []);
+
+  return <div>wat</div>;
 }
