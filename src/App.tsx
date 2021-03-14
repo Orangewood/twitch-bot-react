@@ -21,7 +21,11 @@ export default function App(): JSX.Element {
       {displayAuthorizeLink && <a href={link}>test</a>}
       <Switch>
         <Route path='/home'>
-          <Home />
+          <Home
+            authenticatedSuccessfully={(authenticated: boolean) =>
+              setDisplayAuthorizeLink(!authenticated)
+            }
+          />
         </Route>
         <Route path='/login'>
           <Login />
