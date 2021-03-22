@@ -1,13 +1,9 @@
-.home-slider {
-  // background: #6441a5;
-  overflow: auto;
-  height: 100vh;
-  position: fixed;
-  left: 0;
-  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
-}
-
-// .home-slider-image{
-//     left: 15%;
-//     position: relative;
-// }
+#components-layout-demo-side .logo {
+    height: 32px;
+    margin: 16px;
+    background: rgba(255, 255, 255, 0.3);
+  }
+  
+  .site-layout .site-layout-background {
+    background: #fff;
+  }
