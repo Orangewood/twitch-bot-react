@@ -12,21 +12,30 @@ import {
 
 interface HomeProps {
   authenticatedSuccessfully: (success: boolean) => void;
-  accessToken?: (token: string) => void;
+  // authorizationCode: (code: string) => void;
 }
 
 export default function Home(props: HomeProps) {
-  const { accessToken, authenticatedSuccessfully } = props;
+  const { authenticatedSuccessfully } = props;
   const accessTokenString = window.location.hash.split("=")[1].split("&")[0];
   const { Header, Content, Footer, Sider } = Layout;
   const { SubMenu } = Menu;
 
+  // const fetchAccessToken = (token: string) => {
+  //   fetch(getAccesssTokenUrl, {
+  //     method: "POST",
+  //   }).then((res) => console.log(res));
+  // };
+
+
   const [collapsed, setCollapse] = useState<boolean>(false);
 
   useEffect(() => {
-    if (accessTokenString) authenticatedSuccessfully(true);
-    if (accessToken) accessToken(accessTokenString);
-  }, []);
+    if (accessTokenString) {
+      authenticatedSuccessfully(true);
+
+    }
+  }, [accessTokenString]);
 
   const style = { background: "#0092ff", padding: "8px 0" };
 
