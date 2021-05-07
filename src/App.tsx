@@ -9,9 +9,13 @@ export default function App(): JSX.Element {
     true
   );
 
+  useEffect(() => {
+    // console.log(clientId)
+  }, [])
+
   return (
     <Router>
-      {displayAuthorizeLink && <a href={'test'}>test</a>}
+      {displayAuthorizeLink && <a href={'test'}>Login</a>}
       <Switch>
         <Route path='/home'>
           <Home
@@ -21,9 +25,9 @@ export default function App(): JSX.Element {
             // authorizationCode={(code: string) => setAuthorizationCode(code)}
           />
         </Route>
-        <Route path='/login'>
+        {/* <Route path='/login'>
           <Login />
-        </Route>
+        </Route> */}
       </Switch>
     </Router>
   );

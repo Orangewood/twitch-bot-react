@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
 import "../scss/Home.scss";
 
 import { Layout, Menu, Breadcrumb } from "antd";
@@ -17,7 +17,7 @@ interface HomeProps {
 
 export default function Home(props: HomeProps) {
   const { authenticatedSuccessfully } = props;
-  const accessTokenString = window.location.hash.split("=")[1].split("&")[0];
+  // const accessTokenString = window.location.hash.split("=")[1].split("&")[0];
   const { Header, Content, Footer, Sider } = Layout;
   const { SubMenu } = Menu;
 
@@ -30,12 +30,12 @@ export default function Home(props: HomeProps) {
 
   const [collapsed, setCollapse] = useState<boolean>(false);
 
-  useEffect(() => {
-    if (accessTokenString) {
-      authenticatedSuccessfully(true);
+  // useEffect(() => {
+  //   if (accessTokenString) {
+  //     authenticatedSuccessfully(true);
 
-    }
-  }, [accessTokenString]);
+  //   }
+  // }, [accessTokenString]);
 
   const style = { background: "#0092ff", padding: "8px 0" };
 
